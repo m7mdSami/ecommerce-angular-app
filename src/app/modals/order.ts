@@ -1,3 +1,6 @@
+import { Product } from "./product";
+import { User } from './user';
+
 export interface Order {
   OrderId: number;
   OrderDate: string;
@@ -5,6 +8,8 @@ export interface Order {
   Products: ProductOrder[];
   PaymentType: string;
   TotalPrice?: number;
+  ProductList?: Product[];
+  User?: User;
 }
 
 export interface ProductOrder {
