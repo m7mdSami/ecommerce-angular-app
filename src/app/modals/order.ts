@@ -4,6 +4,7 @@ export interface Order {
   UserId: string;
   Products: ProductOrder[];
   PaymentType: string;
+  TotalPrice?: number;
 }
 
 export interface ProductOrder {

@@ -18,6 +18,7 @@ export const routes: Routes = [
                 path: 'orders',
                 loadComponent: () => import('./pages/orders/orders.component').then(mod => mod.OrdersComponent),
             },
+            
         ]
     },
 ];

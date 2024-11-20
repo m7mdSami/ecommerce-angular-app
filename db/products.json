@@ -9,7 +9,7 @@
   {
     "ProductId": 124,
     "ProductName": "Product 2",
-    "ProductPrice": 100,
+    "ProductPrice": 100, 
     "AvailablePieces": 100,
     "ProductImg": "https://www.decolore.net/wp-content/uploads/2017/04/product-mock-up-set-2.jpg"
   },

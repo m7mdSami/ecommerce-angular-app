@@ -1,1 +1,29 @@
-<p>orders works!</p>
+<section class="orders">
+    
+    <div class="container">
+        <h2>Orders</h2>
+        <p>Here you can see all the orders that have been placed.</p>
+        <p>Click on an order to see more details.</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Payment Type</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (order of orders(); track $index) {
+                    <tr>
+                        <th scope="row">{{ order.OrderId }}</th>
+                        <td>{{ order.TotalPrice }}</td>
+                        <td>{{ order.PaymentType }}</td>
+                        <td><a [routerLink]="['/orders/'+ order.OrderId]" class="btn btn-primary">Order Details</a></td>
+                    </tr>
+                }
+            </tbody>
+      
+        </table>
+    </div>
+</section>
