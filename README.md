@@ -1,6 +1,33 @@
-# ECommerce
+# ECommerce Project Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## Overview
+
+The ECommerce project is an Angular application generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11. This document provides instructions on how to set up, develop, build, and test the application.
+
+## Prerequisites
+
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
+- Angular CLI (version 18.2.11)
+
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    https://github.com/m7mdSami/ecommerce-angular-app.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd e-commerce
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+## Development
 
 ## Development server
 

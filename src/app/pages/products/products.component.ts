@@ -15,8 +15,4 @@ export class ProductsComponent {
   private dbService: DbService = inject(DbService);
   products: WritableSignal<Product[]> = this.dbService.products;
 
-  constructor() {
-    console.log(this.products());
-  }
-
 }

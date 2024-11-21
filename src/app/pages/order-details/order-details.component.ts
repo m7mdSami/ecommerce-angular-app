@@ -20,6 +20,7 @@ export class OrderDetailsComponent implements OnInit {
     this.getOrder();
   }
 
+  // Get order details
   getOrder() {
     this.order.set(this.dbService.getOrder(this.orderId()!));
   }

@@ -1,0 +1,27 @@
+<section class="add-order">
+    <div class="modal-header">
+        <h4 class="modal-title">Add User Details</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form #f="ngForm" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="email" class="form-control" id="name" formControlName="Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" formControlName="Email">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="email" class="form-control" id="phone" formControlName="Phone">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="email" class="form-control" id="address" formControlName="Address">
+            </div>
+            <button type="submit" class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+        </form>
+    </div>
+</section>

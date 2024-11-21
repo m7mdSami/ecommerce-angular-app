@@ -15,11 +15,17 @@ export class DbService {
 
   // Get all orders
   getOrders(): void {
+    // Map the orders and calculate the total price of each order
     const orders = this.orders().map(order => {
       // Calculate total price of the order
       const total = order.Products.reduce((total, product) => {
         const productItem = this.getProductById(product.ProductId);
-        order.ProductList = order.ProductList?.length ? [...order.ProductList, productItem] : [productItem];
+        // Check if the product is already in the order
+        const isExist = order.ProductList?.find(item => item.ProductId === product.ProductId)
+        if(!isExist) {
+          order.ProductList = order.ProductList?.length ? [...order.ProductList, productItem] : [productItem];
+        }
+        // Calculate the total price of the order
         return total + productItem.ProductPrice * product.Quantity;
       }, 0);
 
@@ -35,7 +41,9 @@ export class DbService {
     this.orders.set(orders);
   }
 
+  // Get Product by id
   getProductById(id: number): Product {
+    // Find the product with the given id
     const product = this.products().find(product => product.ProductId === id);
     if (!product) {
       throw new Error(`Product with id ${id} not found`);
@@ -43,6 +51,7 @@ export class DbService {
     return product;
   }
 
+  // Get User by id
   getUserById(userId: string): User {
     const user = this.users().find(user => user.Id === userId);
     if (!user) {
@@ -51,6 +60,7 @@ export class DbService {
     return user;
   }
 
+  // Get Order by id
   getOrder(orderId: number): Order {
     const order = this.orders().find(order => +order.OrderId === +orderId);
     if (!order) {
